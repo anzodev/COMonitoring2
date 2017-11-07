@@ -1,0 +1,417 @@
+/* FONTS */
+  @font-face {
+    font-family: "DroidMonoRegular";
+    src: url("../fonts/DroidMonoRegular/DroidMonoRegular.eot");
+    src: url("../fonts/DroidMonoRegular/DroidMonoRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/DroidMonoRegular/DroidMonoRegular.woff") format("woff"),
+    url("../fonts/DroidMonoRegular/DroidMonoRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  @font-face {
+      font-family: "PTSansRegular";
+      src: url("../fonts/PTSansRegular/PTSansRegular.eot");
+      src: url("../fonts/PTSansRegular/PTSansRegular.eot?#iefix")format("embedded-opentype"),
+      url("../fonts/PTSansRegular/PTSansRegular.woff") format("woff"),
+      url("../fonts/PTSansRegular/PTSansRegular.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
+
+  @font-face {
+      font-family: "PTSansBold";
+      src: url("../fonts/PTSansBold/PTSansBold.eot");
+      src: url("../fonts/PTSansBold/PTSansBold.eot?#iefix")format("embedded-opentype"),
+      url("../fonts/PTSansBold/PTSansBold.woff") format("woff"),
+      url("../fonts/PTSansBold/PTSansBold.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+  }
+
+
+/* BASIC STYLE */
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: default;
+  }
+
+  body {
+    font-family: "PTSansRegular", Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    min-width: 320px;
+    height: 100vh;
+    line-height: 24px;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    color: #444;
+  }
+
+  input {
+    font-family: "PTSansRegular", Verdana, Helvetica, sans-serif;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul:hover {
+    cursor: default;
+  }
+  p {
+    margin: 0;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  span {
+    cursor: default;
+  }
+
+
+/* COMMON STYLE */
+  i.fa {
+    margin-right: 5px;
+  }
+
+
+/* TEMPLATE */
+  .wrapper {
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapper > section {
+    padding: 0 8px;
+  }
+
+  .list {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+  }
+  .list > .item {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #chart-side {
+    width: 70%;
+    padding-top: 26px;
+  }
+  
+  #client-side {
+    position: relative;
+    width: 30%;
+    padding-right: 0;
+  }
+
+
+/* CHART */
+  #chart {
+    position: relative;
+  }
+  #chart:after {
+    position: absolute;
+    top: -24px;
+    left: 2px;
+    content: "Signal level, dBmW";
+    font-size: 12px;
+  }
+  #chart:before {
+    position: absolute;
+    bottom: -24px;
+    right: 0;
+    content: "Frequency, MHz";
+    font-size: 12px;
+  }
+
+
+/* CLIENTS */
+  #clients {
+    overflow-y: scroll;
+    margin-right: -15px;
+  }
+
+  .client {
+    position: relative;
+    padding: 4px 0 8px;
+    color: #999;
+  }
+  .client:hover,
+  .client.active {
+    color: #444;
+  }
+
+  .client .id {
+    line-height: 32px;
+  }
+  .client .id > div {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .client .id .mark span {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    margin-right: 6px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #999;
+    border-radius: 50%;
+  }
+  .client:hover .id .mark span,
+  .client.active .id .mark span {
+    background-color: #444;
+    border-color: #444;
+  }
+
+  .client .id .module-counter {
+    margin-right: 4px;
+  }
+  .client .id .module-counter i {
+    position: relative;
+    top: -1px;
+    font-style: normal;
+  }
+
+  .client .id .name.edit span {
+    display: none;
+  }
+  .client .id .name.edit .field {
+    display: inline-block;
+  }
+
+  .client .id .name span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .client .id .name span:hover {
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+  }
+
+  .client .id .name .field {
+    width: 260px;
+    display: none;
+  }
+  .client .id .name .field input {
+    width: 90%;
+    outline: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .client .id .name .field i {
+    color: #c9c9c9;
+  }
+  .client .id .name .field i:hover {
+    color: #444;
+    cursor: pointer;
+  }
+
+  .client .details {
+    font-size: 10px;
+    line-height: 16px;
+    padding-left: 14px;
+  }
+  .client .details > div {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .client .details > div > div:first-child {
+    width: 34%;
+  }
+  .client .details > div > div:last-child {
+    width: 66%;
+  }
+
+  .client .overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .client.active .overlay {
+    display: none;
+  }
+
+
+/* MODULES */
+  #modules {
+    position: relative;
+    padding: 26px 0 4px;
+  }
+
+  .module {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DroidMonoRegular';
+    font-size: 10px;
+    line-height: 30px;
+  }
+  .module.no-connected {
+    font-size: 12px;
+  }
+
+  .module .port {
+    position: relative;
+    font-family: 'PTSansBold';
+    font-size: 12px;
+  }
+  .module .port.off {
+    color: #444 !important;
+  }
+
+  .module .package span {
+    color: #c9c9c9;
+  }
+  .module .package span:first-child {
+    color: #444;
+  }
+
+  .module .color {width: 176px;}
+  .module .chart {width: 108px; text-align: right;}
+
+  .module .color span {
+    position: relative;
+    top: -1px;
+    font-size: 9px;
+    display: inline-block;
+    margin: 0 3px;
+    width: 12px;
+    line-height: 12px;
+    border-radius: 50%;
+    background-color: #444;
+    color: transparent;
+    cursor: pointer;
+  }
+  .module .color span:before {
+    display: none;
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #444;
+    border-radius: 50%;
+  }
+  .module .color span:first-child {
+    margin-left: 0;
+  }
+  .module .color span:last-child {
+    margin-right: 0;
+  }
+  .module .color span.active:before {
+    display: block;
+  }
+  .module .color span:hover:before {
+    display: block;
+    border-color: #c9c9c9;
+  }
+
+  .module .chart span {
+    font-size: 9px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 2px;
+    width: 22px;
+    line-height: 14px;
+    background-color: #efefef;
+    color: #444;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .module .chart span:hover,
+  .module .chart span.active {
+    background-color: #666;
+    color: #fff;
+  }
+
+  .module > div {
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+  }
+  .module > div:nth-child(1) {width: 14%;}
+  .module > div:nth-child(2) {width: 20%;}
+  .module > div:nth-child(3) {width: 42%; padding-left: 8px;}
+  .module > div:nth-child(4) {width: 24%; text-align: right;}
+  .module > div:nth-child(5) {width: 0; display: none;}
+
+  #modules.conf-on .module > div:nth-child(1) {width: 14%;}
+  #modules.conf-on .module > div:nth-child(2) {width: 0; display: none;}
+  #modules.conf-on .module > div:nth-child(3) {width: 0; display: none;}
+  #modules.conf-on .module > div:nth-child(4) {width: 0; display: none;}
+  #modules.conf-on .module > div:nth-child(5) {
+    width: 86%;
+    display: block;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+
+/* BUTTONS */
+  #buttons {
+    position: relative;
+    height: 24px;
+    text-align: right;
+    padding-right: 8px;
+  }
+  #buttons > i {
+    position: relative;
+    line-height: 24px;
+    font-size: 16px;
+    padding: 0 4px;
+    background-color: #fff;
+    color: #c9c9c9;
+    z-index: 10;
+  }
+  #buttons > i:hover,
+  #buttons > i.active {
+    color: #444;
+  }
+  #buttons .line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ededed;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+  }

@@ -7,7 +7,6 @@ from platform import uname
 from sys import platform
 
 
-
 def name():
     '''Return string about operating system info.
     For example: Linux #42~16.04.1-Ubuntu

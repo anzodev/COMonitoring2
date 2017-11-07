@@ -106,15 +106,11 @@ class Server(threading.Thread):
             try:
                 pckg = conv.from_json(data)
             except json.decoder.JSONDecodeError:
-                print('json error')
                 pass
             else:
                 if pckg['k'] == self.key:
                     del pckg['k']
                     self.socketio.emit('render_modules', {'data': pckg})
-                else:
-                    print('hash error')
-                    pass
             finally:
                 pass
 

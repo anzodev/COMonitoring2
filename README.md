@@ -32,7 +32,7 @@ Wi-Detector v3 (supported soon)
 
 2. Be sure that pip is installed. If you are using Linux distribution and default Python interpreter, install pip by (for Ubuntu):
 ```
-  sudo apt-get install python-pip
+  sudo apt-get install python3-pip
 ```
 3. Install packages (on Linux you can get permission error, use sudo command to install packages):
 ```

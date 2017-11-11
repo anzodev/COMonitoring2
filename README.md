@@ -11,10 +11,10 @@ Monitoring system of signal level that uses programmable modules and [Python 3.6
 ## Software
 
 [Pololu Wixel](https://www.pololu.com/docs/0J46/1)  
-![Pololu Wixel](https://github.com/anzodev/COMonitoring2/blob/master/pics/wixel.png)
+
 
 Ubiquiti AirView2
-&emsp;![Pololu Wixel](https://github.com/anzodev/COMonitoring2/blob/master/pics/ubiquti.png)
+
 
 Wi-Detector v3
-&emsp;![Pololu Wixel](https://github.com/anzodev/COMonitoring2/blob/master/pics/wi.png)
+

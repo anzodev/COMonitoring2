@@ -8,7 +8,7 @@ Monitoring system of signal level that uses programmable modules and [Python 3.5
 - color creation
 - chart creation
 
-> The system was tested on Windows 7 and Ubuntu 16.04.
+> Development stage: Testing (Windows 7, Ubuntu 16.04)
 
 ## Hardware
 

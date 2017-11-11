@@ -99,10 +99,10 @@ Module's information:
 ![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/module-setting2.png)
 
 New feature, you can choose different colors and set chart's type for each modules. Chart types:
-1 &ndash; values of the last accepted package
-10 &ndash; average values of the last 10 accepted packages
-100 &ndash; average values of the last 100 accepted packages
-ALL &ndash; average values of all accepted packages
+- 1 &ndash; values of the last accepted package
+- 10 &ndash; average values of the last 10 accepted packages
+- 100 &ndash; average values of the last 100 accepted packages
+- ALL &ndash; average values of all accepted packages
 
 ## Licenses
 

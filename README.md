@@ -32,11 +32,11 @@ Wi-Detector v3 (supported soon)
 
 2. Be sure that pip is installed. If you are using Linux distribution and default Python interpreter, install pip by (for Ubuntu):
 ```
-  sudo apt-get install python3-pip
+sudo apt-get install python3-pip
 ```
 3. Install packages (on Linux you can get permission error, use sudo command to install packages):
 ```
-  pip install pyserial flask-socketio 
+pip install pyserial flask-socketio 
 ```
 
 ## Loading Firmware
@@ -55,17 +55,28 @@ To use [Pololu Wixel](https://www.pololu.com/docs/0J46/1) module you need instal
 2. Edit config file if you need. All numeric values are ports that use by the app. You can change all values, but ports value ans secret key's value **must be same** on all computers where app works.
 3. Run app.py
 ```
-  python3 app.py
+python3 app.py
 ```
 4. Connect modules. If the app can't get access to modules on Linux platform use command (Pololu Wixel):
 ```
-  sudo usermod -a -G dialout $USER
+sudo usermod -a -G dialout $USER
 ```
 If permission error doesn't disappeare try to use:
 ```
-  sudo chmod 775 /dev -R
+sudo chmod 775 /dev -R
 ```
 
-You can see simple app's interface in Terminal
+You can see simple app's interface in Terminal  
 
+![App interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/app-interface.png)  
 
+- server address &ndash; use it to connect to the system from browser  
+- system nodes &ndash; addresses of another connected computers  
+- host &ndash; your IP address  
+- name &ndash; current name of your computer in the monitoring system  
+- os &ndash; information about operating system  
+- modules &ndash; list of connected modules to the current computer (serial name, HEX color, chart type, conection status)
+
+## How Does It Work
+
+Main feature of the current app version is system's decentralization. There isn't server's file, only main app. Now server is the separete process that works in the parallel thread. App work algorithm:

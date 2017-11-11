@@ -84,8 +84,25 @@ Main feature of the current app version is system's decentralization. There isn'
 ![App's algorithm](https://github.com/anzodev/COMonitoring2/blob/master/pics/algorithm.png)
 
 ## User's Web Interface
+![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/web-interface.png)
 
+Current interface has new structure. There are modules list of the active client on the top and clients list on the bottom. You can switch client and his modules appear on the top. Interface doesn't have "Pause" button because you can disconnect modules dynamicly.
 
+![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/module-setting1.png)
+
+Module's information:
+- port name
+- serial name
+- ratio between module's packages that were accepted by app and all packages that were sent by module. It is usefull to know, if you want to get the chart of average values of all module's packages, because chart calculated by all accepted packages.
+- work time
+
+![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/module-setting2.png)
+
+New feature, you can choose different colors and set chart's type for each modules. Chart types:
+1 &ndash; values of the last accepted package
+10 &ndash; average values of the last 10 accepted packages
+100 &ndash; average values of the last 100 accepted packages
+ALL &ndash; average values of all accepted packages
 
 ## Licenses
 

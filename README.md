@@ -57,5 +57,15 @@ To use [Pololu Wixel](https://www.pololu.com/docs/0J46/1) module you need instal
 ```
   python3 app.py
 ```
-4. Connect modules.
+4. Connect modules. If the app can't get access to modules on Linux platform use command (Pololu Wixel):
+```
+  sudo usermod -a -G dialout $USER
+```
+If permission error doesn't disappeare try to use:
+```
+  sudo chmod 775 /dev -R
+```
+
+You can see simple app's interface in Terminal
+
 

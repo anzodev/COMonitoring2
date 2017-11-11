@@ -57,7 +57,7 @@ To use [Pololu Wixel](https://www.pololu.com/docs/0J46/1) module you need instal
 ```
 python3 app.py
 ```
-4. Connect modules. If the app can't get access to modules on Linux platform use command (Pololu Wixel):
+4. Connect modules. If app can't get access to modules on Linux platform use command (Pololu Wixel):
 ```
 sudo usermod -a -G dialout $USER
 ```
@@ -79,4 +79,20 @@ You can see simple app's interface in Terminal
 
 ## How Does It Work
 
-Main feature of the current app version is system's decentralization. There isn't server's file, only main app. Now server is the separete process that works in the parallel thread. App work algorithm:
+Main feature of the current app version is system's decentralization. There isn't server's file, only main app. Now server is the separete process that works in the parallel thread. App work algorithm:  
+
+![App's algorithm](https://github.com/anzodev/COMonitoring2/blob/master/pics/algorithm.png)
+
+## User's Web Interface
+
+
+
+## Licenses
+
+The source code are licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). The schematics are licensed under the [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
+## Authors
+
+Developer &mdash; Ivan Bogachuk  
+Manager &mdash; Vladimir Sokolov
+

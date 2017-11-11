@@ -15,8 +15,6 @@ from cmg import serv
 from cmg import output
 from time import sleep
 
-#sudo usermod -a -G dialout $USER
-
 ROOT = sys.path[0]
 PATH_CONFIG = os.path.join(ROOT, 'config')
 

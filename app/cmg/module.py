@@ -32,7 +32,7 @@ def find_ports():
     if machine.platform.startswith('win'):
         ports = ['COM%s' % (i + 1) for i in range(256)]
     elif machine.platform.startswith('linux') or machine.platform.startswith('cygwin'):
-        ports = glob('/dev/tty[A-Za-z0-9]*')
+        ports = glob('/dev/tty[A-Za-z]*')
     elif machine.platform.startswith('darwin'):
         ports = glob('/dev/tty.*')
     else:

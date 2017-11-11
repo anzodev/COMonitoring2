@@ -67,12 +67,16 @@ sudo chmod 775 /dev -R
 ```
 
 You can see simple app's interface in Terminal  
+
 ![App interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/app-interface.png)  
 
-server address &ndash; use it to connect to the system from browser  
-system nodes &ndash; addresses of another connected computers  
-host &ndash; your IP address  
-name &ndash; current name of your computer in the monitoring system  
-os &ndash; information about operating system  
-modules &ndash; list of connected modules to the current computer (serial name, HEX color, chart type, conection status)
+- server address &ndash; use it to connect to the system from browser  
+- system nodes &ndash; addresses of another connected computers  
+- host &ndash; your IP address  
+- name &ndash; current name of your computer in the monitoring system  
+- os &ndash; information about operating system  
+- modules &ndash; list of connected modules to the current computer (serial name, HEX color, chart type, conection status)
 
+## How Does It Work
+
+Main feature of the current app version is system's decentralization. There isn't server's file, only main app. Now server is the separete process that works in the parallel thread. App work algorithm:

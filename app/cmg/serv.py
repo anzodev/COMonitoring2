@@ -97,7 +97,7 @@ class Server(threading.Thread):
                 sock.send('tcp', addr, self.pc_at, to_refresh)
 
             self.socketio.emit('render_clients', {'data': to_render})
-            time.sleep(5)
+            time.sleep(2)
 
     def __transfer_modules(self):
         s = sock.TCP(self.host, self.ps_tm)

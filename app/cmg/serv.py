@@ -37,7 +37,6 @@ def gethost(host_c, pc_cn, ps_cn, key, attempt=3, interval=1):
     return host
 
 
-
 class Server(threading.Thread):
 
     def __init__(self, host, ps_w, ps_cn, ps_tc, ps_tm, pc_cn,

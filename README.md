@@ -3,7 +3,7 @@
 Monitoring system of signal level that uses programmable modules and [Python 3.5+](https://www.python.org/downloads/). Current app has a big bunch of changes than previous [version](https://github.com/anzodev/COMonitoring), so it was the reason to create new repository. Main features:
 
 - system decentralization
-- module's connect/disconnect dynamicly
+- module’s connect/disconnect dynamicly
 - data integrity checking
 - color creation
 - chart creation
@@ -47,62 +47,62 @@ To use [Pololu Wixel](https://www.pololu.com/docs/0J46/1) module you need instal
 3. Use this [manual](https://www.pololu.com/docs/0J46/10.b) to load firmware.
 4. Load the [firmware](https://github.com/anzodev/COMonitoring/tree/master/wixel-sdk/apps/RPi_2oleds_ssd1306) into Pololu Wixel.
 
-> For additional information see manufacturer [User's Guide](https://www.pololu.com/docs/0J46).
+> For additional information see manufacturer [User’s Guide](https://www.pololu.com/docs/0J46).
 
 ## Run
 
 1. Download [app](https://github.com/anzodev/COMonitoring2/tree/master/app) folder.
-2. Edit config file if you need. All numeric values are ports that use by the app. You can change all values, but ports value ans secret key's value **must be same** on all computers where app works.
+2. Edit config file if you need. All numeric values are ports that use by the app. You can change all values, but ports value ans secret key’s value **must be same** on all computers where app works.
 3. Run app.py
 ```
 python3 app.py
 ```
-4. Connect modules. If app can't get access to modules on Linux platform use command (Pololu Wixel):
+4. Connect modules. If app can’t get access to modules on Linux platform use command (Pololu Wixel):
 ```
 sudo usermod -a -G dialout $USER
 ```
-If permission error doesn't disappeare try to use:
+If permission error doesn’t disappeare try to use:
 ```
 sudo chmod 775 /dev -R
 ```
 
-You can see simple app's interface in Terminal  
+You can see simple app’s interface in Terminal  
 
 ![App interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/app-interface.png)  
 
-- server address &ndash; use it to connect to the system from browser  
-- system nodes &ndash; addresses of another connected computers  
-- host &ndash; your IP address  
-- name &ndash; current name of your computer in the monitoring system  
-- os &ndash; information about operating system  
-- modules &ndash; list of connected modules to the current computer (serial name, HEX color, chart type, conection status)
+- server address &mdash; use it to connect to the system from browser  
+- system nodes &mdash; addresses of another connected computers  
+- host &mdash; your IP address  
+- name &mdash; current name of your computer in the monitoring system  
+- os &mdash; information about operating system  
+- modules &mdash; list of connected modules to the current computer (serial name, HEX color, chart type, conection status)
 
-## How Does It Work
+## Controller
 
-Main feature of the current app version is system's decentralization. There isn't server's file, only main app. Now server is the separete process that works in the parallel thread. App work algorithm:  
+Main feature of the current app version is system’s decentralization. There isn’t server’s file, only main app. Now server is the separete process that works in the parallel thread. App work algorithm:  
 
-![App's algorithm](https://github.com/anzodev/COMonitoring2/blob/master/pics/algorithm.png)
+![App’s algorithm](https://github.com/anzodev/COMonitoring2/blob/master/pics/algorithm.png)
 
-## User's Web Interface
+## View
 ![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/web-interface.png)
 
-Current interface has new structure. There are modules list of the active client on the top and clients list on the bottom. You can switch client and his modules appear on the top. Interface doesn't have "Pause" button because you can disconnect modules dynamicly.
+Current interface has new structure. There are modules list of the active client on the top and clients list on the bottom. You can switch client and his modules appear on the top. Interface doesn’t have "Pause" button because you can disconnect modules dynamicly.
 
 ![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/module-setting1.png)
 
-Module's information:
+Module’s information:
 - port name
 - serial name
-- ratio between module's packages that were accepted by app and all packages that were sent by module. It is usefull to know, if you want to get the chart of average values of all module's packages, because chart calculated by all accepted packages.
+- ratio between module’s packages that were accepted by app and all packages that were sent by module. It is usefull to know, if you want to get the chart of average values of all module’s packages, because chart calculated by all accepted packages.
 - work time
 
 ![Web interface](https://github.com/anzodev/COMonitoring2/blob/master/pics/module-setting2.png)
 
-New feature, you can choose different colors and set chart's type for each modules. Chart types:
-- 1 &ndash; values of the last accepted package
-- 10 &ndash; average values of the last 10 accepted packages
-- 100 &ndash; average values of the last 100 accepted packages
-- ALL &ndash; average values of all accepted packages
+New feature, you can choose different colors and set chart’s type for each modules. Chart types:
+- 1 &mdash; values of the last accepted package
+- 10 &mdash; average values of the last 10 accepted packages
+- 100 &mdash; average values of the last 100 accepted packages
+- ALL &mdash; average values of all accepted packages
 
 ## Licenses
 

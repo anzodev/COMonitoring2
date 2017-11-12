@@ -27,9 +27,8 @@ class TCP:
                     data = ''.join([data, part])
                 else:
                     break
-            conn.close()
         finally:
-            pass
+            conn.close()
         return data
 
     def accept_close(self):

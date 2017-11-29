@@ -100,8 +100,8 @@ Module’s information:
 
 New feature, you can choose different colors and set chart’s type for each modules. Chart types:
 - 1 &mdash; values of the last accepted package
-- 10 &mdash; average values of the last 10 accepted packages
-- 100 &mdash; average values of the last 100 accepted packages
+- 10 &mdash; average values of last 10 accepted packages
+- 100 &mdash; average values of last 100 accepted packages
 - ALL &mdash; average values of all accepted packages
 
 ## Licenses

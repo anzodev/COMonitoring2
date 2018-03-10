@@ -32,7 +32,21 @@ def find_ports():
     if machine.platform.startswith('win'):
         ports = ['COM%s' % (i + 1) for i in range(256)]
     elif machine.platform.startswith('linux') or machine.platform.startswith('cygwin'):
-        ports = glob('/dev/tty[A-Za-z]*')
+        cmd_devices = ('for f in ls /dev/tty*; do udevadm info -q property $f'
+                       ' && printf \'\n\'; done')
+        result   = []
+        required = ('ID_SERIAL_SHORT', 'ID_VENDOR_ID', 'ID_MODEL_ID', 'DEVNAME')
+        devices  = os.popen(cmd_devices).read().split('\n\n')[:-1]
+        for dev in devices:
+            serialized = {row.split('=')[0]: row.split('=')[1]
+                          for row in dev.split('\n')[:-1]}
+
+            values = [serialized.get(key) for key in required]
+            if None in values:
+                continue
+
+            result.append(values[3])
+        return result
     elif machine.platform.startswith('darwin'):
         ports = glob('/dev/tty.*')
     else:

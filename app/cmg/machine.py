@@ -18,9 +18,9 @@ def name():
 def gethost():
     '''Return IP address.'''
     if platform.startswith('linux'):
-        with socket.socket(type=socket.SOCK_DGRAM) as s:
-            s.connect(('8.8.8.8', 1024))
-            return s.getsockname()[0]
+        cmd = 'ifconfig | grep \'inet \''
+        output = os.popen(cmd).read()
+        host = output.split('\n')[0].split(' ')[2]
     elif platform.startswith('win'):
         host = socket.gethostbyname_ex(socket.gethostname())[2][0]
     else:

@@ -3,6 +3,7 @@
 import serial
 import machine
 import conv
+import os
 
 from glob import glob
 
@@ -32,7 +33,7 @@ def find_ports():
     if machine.platform.startswith('win'):
         ports = ['COM%s' % (i + 1) for i in range(256)]
     elif machine.platform.startswith('linux') or machine.platform.startswith('cygwin'):
-        cmd_devices = ('for f in ls /dev/tty*; do udevadm info -q property $f'
+        cmd_devices = ('for f in ls /dev/tty*; do udevadm info -q property -n $f'
                        ' && printf \'\n\'; done')
         result   = []
         required = ('ID_SERIAL_SHORT', 'ID_VENDOR_ID', 'ID_MODEL_ID', 'DEVNAME')

@@ -109,8 +109,6 @@ class Server(threading.Thread):
                 if pckg['k'] == self.key:
                     del pckg['k']
                     self.socketio.emit('render_modules', {'data': pckg})
-            finally:
-                pass
 
     def run(self):
         @self.app.route('/')

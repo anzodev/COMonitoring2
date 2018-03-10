@@ -27,7 +27,6 @@ class TCP:
                     data = ''.join([data, part])
                 else:
                     break
-        finally:
             conn.close()
         return data
 

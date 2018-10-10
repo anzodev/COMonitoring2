@@ -8,23 +8,11 @@ Monitoring system of signal level that uses programmable modules and [Python 3.5
 - color creation
 - chart creation
 
-> Development stage: Testing (Windows 7, Ubuntu 16.04)
-
 ## Hardware
 
 [Pololu Wixel](https://www.pololu.com/docs/0J46/1)  
 
 ![Pololu Wixel](https://github.com/anzodev/COMonitoring2/blob/master/pics/wixel.png)
-
-
-Ubiquiti AirView2 (supported soon)  
-
-![Ubiquiti AirView2](https://github.com/anzodev/COMonitoring2/blob/master/pics/ubiquti.png)
-
-
-Wi-Detector v3 (supported soon)  
-
-![Wi-Detector v3](https://github.com/anzodev/COMonitoring2/blob/master/pics/wi.png)
 
 ## Software
 
@@ -34,9 +22,9 @@ Wi-Detector v3 (supported soon)
 ```
 sudo apt-get install python3-pip
 ```
-3. Install packages (on Linux you can get permission error, use sudo command to install packages):
+3. You should use [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) for your projects, but also you can install packages by command (on Linux you can get permission error, use "--user" flag to install packages):
 ```
-pip install pyserial flask-socketio 
+pip3 install pyserial flask-socketio --user
 ```
 
 ## Loading Firmware
@@ -57,7 +45,7 @@ To use [Pololu Wixel](https://www.pololu.com/docs/0J46/1) module you need instal
 ```
 python3 app.py
 ```
-4. Connect modules. If app can’t get access to modules on Linux platform use command (Pololu Wixel):
+4. Connect modules. Linux users have to be in the "dialout" group:
 ```
 sudo usermod -a -G dialout $USER
 ```
